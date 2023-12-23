@@ -5,4 +5,14 @@ import { Component } from '@angular/core';
   templateUrl: './server.component.html',
   styleUrls: ['./server.component.css'],
 })
-export class ServerComponent {}
+export class ServerComponent {
+  serverID: number = Math.round(Math.random() * 1000);
+  serverStatus: string = `online`;
+
+  getServerID() {
+    return this.serverID;
+  }
+  getServerStatus() {
+    return this.serverStatus;
+  }
+}
