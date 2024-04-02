@@ -7,9 +7,18 @@ import { Component } from '@angular/core';
 })
 export class DisplayComponent {
   isBtnEnabled: boolean = true;
+  serverStatus: boolean = false;
+  serverName: string = 'NA';
   constructor() {
     setTimeout(() => {
       this.isBtnEnabled = false;
-    }, 8000);
+    }, 4000);
+  }
+
+  onServerStatusChange() {
+    this.serverStatus = true;
+  }
+  onTypeServerName(event: any) {
+    this.serverName = event.target.value;
   }
 }

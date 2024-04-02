@@ -1,1 +1,15 @@
-<button class="btn btn-primary" [disabled]="isBtnEnabled">Button</button>
+<button
+  class="btn btn-primary"
+  [disabled]="isBtnEnabled"
+  (click)="onServerStatusChange()"
+>
+  Button
+</button>
+<p *ngIf="serverStatus; else elseBlock">Server Status:{{ serverStatus }}</p>
+<ng-template #elseBlock>
+  This content will be displayed if condition is false.
+</ng-template>
+<br />
+<label>Enter Server Name: </label>
+<input type="text" class="form-control" (input)="onTypeServerName($event)" />
+<p>Output:- {{ serverName }}</p>
